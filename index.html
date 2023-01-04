@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="">
+    <title>Media Player</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta name="theme-color" content="orange">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="bootstrap-icons-1.2.1/font/bootstrap-icons.css">
+
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="preLoader">
+        <div class="items">
+            <div class="loadingAnime">
+                <div class="brd"></div>
+                <div class="brd"></div>
+                <div class="brd"></div>
+            </div>
+            <div class="wordsLoading">
+                <h2 id="WD">Hello, Welcome</h2>
+            </div>
+        </div>
+    </div>
+    <div class="modal_for_player">
+        <p><i class="bi bi-earbuds"></i><span id="currentPlays"> Clara Mae - Rooftop Song.mp3</span></p>
+        <span id="Years">Year: 2022</span>
+    </div>
+    <div class="mediaBox">
+        <div class="navigator">
+            <div class="col-xl-12" style="display:flex">
+                <div class="" style="position: relative;">
+                    <i class="bi bi-three-dots-vertical option"></i>
+                    <div class="more more_list animation__animate animate__animated animate__fadeInUp" style="display: none;">
+                        <ul class="">
+                            <li><a href=""><i class="bi bi-share"></i> share</a></li>
+                            <li><a href=""><i class="bi bi-share"></i> share</a></li>
+                            <li><a href=""><i class="bi bi-share"></i> share</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="" style="position: relative;">
+                    <i class="bi bi-gear-fill setting"></i>
+                    <div class="more settings animation__animate animate__animated animate__fadeInUp" style="display: none;">
+                        <ul class="">
+                            <li><a href=""><i class="bi bi-share"></i> share</a></li>
+                            <li><a href=""><i class="bi bi-share"></i> share</a></li>
+                            <li><a href=""><i class="bi bi-share"></i> share</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="" style="position: relative;">
+                    <i class="bi bi-folder-fill" onclick="getFile();"></i>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- MY CLIENT MEDIA PLAYER START-->
+        <div class="mediaPoint">
+            <div class="closer"><i class="bi bi-chevron-double-left"></i></div>
+            <div class="image" id="mImg">
+
+            </div>
+            <div class="mediaInput">
+                <div class="songNam">
+                    <marquee behavior="" direction="right"style="margin: 10px;text-align: center;" ><span id="marquee">Select the song to play</span></marquee>
+            </div>
+                <div class="icons">
+                    <div class="progressTab">
+                        <input type="range" name="" id="range" value="0" max="">
+                        <div class="row">
+                            <div class="col-6" id="currentTime">00:00</div>
+                            <div class="col-6" id="EndTime">00:00</div>
+                        </div>
+                        <div class="inputs">
+                            <input type="file" name="" id="open_file" style="display: none;" onchange="getThis();" accept=".mp3, .wav" multiple>
+                        </div>
+                    </div>
+
+                    <div class="Control_List">
+                        <button><i class="bi bi-shuffle"></i></button>
+                        <button onclick="loops();"><i class="bi bi-arrow-clockwise"></i></button>
+                        <button id="backward"><i class="bi bi-chevron-double-left"></i></button>
+                        <button onclick="stopProgress()"><i class="bi bi-stop-fill"></i></button>
+                        <button id="forward"><i class="bi bi-chevron-double-right"></i></button>
+                        <button class="llst" style="display: none;"><i class="bi bi-stack"></i></button>
+
+
+                    </div>
+                    <div class="icon">
+                        <button class="previous"><i class="bi bi-skip-backward-fill"></i></button>
+                        <button style="display: block;" class="play" onclick="Play();"><i class="bi bi-play-fill"></i></button>
+                        <button class="next"><i class="bi bi-skip-forward-fill"></i></button>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- MEDIA PLAYER END -->
+        <div class="HomePage" style="z-index: 2;">
+            <div class="headerPicture">
+                <i class="bi bi-house-fill"></i>
+            </div>
+           <section>
+
+              <div class="homeplace">
+                <h3>-WELCOME-</h3>
+                <p>This is the features that I got for you</p>
+                <div class="container plugs">
+                    <i class="bi bi-music-player medI"></i>
+                    <i class="bi bi-megaphone medI1"></i>
+                    <i class="bi bi-save2-fill medI2"></i>
+                    <i class="bi bi-speedometer2 medI3"></i>
+                </div>
+                <div class="myBanner">
+                    <div class="myFade">
+                        <div class="myRess">
+                            <h1>Audio Player</h1>
+                            <p>Listen Musics with no limit, Enjoy your favorate lists from your Custom files with one Click</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+           </section>
+        </div>
+        <!-- SPEECH SYNTHESIS START -->
+        <div class="TextSpeech" style="display: none;">
+            <div class="closeYT speech"> <i class="bi bi-chevron-double-down"></i></div>
+            <div class="logMes">
+                <p>listen to your words on files, Enjoy Speeches and stories via Speech Synthesis world.</p>
+                <button class="loadFLBTN">load file</button>
+            </div>
+            <h3 style="text-align: center;color:gray;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: 100;">Write/Paste Words</h3>
+            <div class="textAstext">
+                <div class="myIco">
+                    <ul>
+                        <li onclick="start();"><i class="bi bi-speaker-fill"></i><span class="animation__animate animate__animated animate__fadeInLeft"> start</span></li>
+                        <li class="pauses"><i class="bi bi-cup-fill"></i><span class="animation__animate animate__animated animate__fadeInLeft"> pause</span></li>
+                        <li class="resume" style="display: none;"><i class="bi bi-disc-fill"></i><span class="animation__animate animate__animated animate__fadeInLeft"> resume</span></li>
+                        <li class="stop"><i class="bi bi-exclamation-diamond-fill"></i><span class="animation__animate animate__animated animate__fadeInLeft"> stop</span></li>
+                        <li class="DELETE"><i class="bi bi-trash-fill"></i><span class="animation__animate animate__animated animate__fadeInLeft"> delete</span></li>
+                        <li><i class="bi bi-gear-fill"></i><span class="animation__animate animate__animated animate__fadeInLeft"> settings</span></li>
+                    </ul>
+                </div>
+                <textarea name="" id="textArea" cols="30" rows="10" title="write or paste the texts" onkeypress="getInfo();" onkeyup="getInfo();" onkeydown="getInfo();"></textarea>
+                <div class="details">
+                    <div class="container">
+                        <i class="bi bi-record-circle"></i>
+                        <div class="volume"></div>
+                        <div class="sizes_type">
+                            <span class="size">0.0 MB</span>
+                            <span class="typeTxt">text/plain</span>
+                            <span class="wordsCount">1000Words</span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="chooseFile" style="display: none;">
+                    <div class="setUpBx">
+                        <div class="clos"><p><i class="bi bi-chevron-double-down"></i> close</p></div>
+                        <h3>FILE TYPE</h3>
+                        <div class="listFile">
+                            <button onclick="textFind();">
+                                <i class="bi bi-file-earmark-font-fill"></i> text
+                                <input type="file" name="" id="textfile" accept=".txt,.md" hidden>
+                            </button>
+                            <p><i class="bi bi-chevron-double-down"></i> Coming Soon ...</p>
+                            <button><i class="bi bi-file-earmark-pdf-fill"></i> pdf</button>
+                            <button><i class="bi bi-file-earmark-code-fill"></i> html</button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ENDS -->
+        <!-- YOUTUBE DOWNLOADER -->
+        <div class="YDownloader" style="display:none">
+            <div class="closeYT YT"> <i class="bi bi-chevron-double-down"></i></div>
+            <div class="platform_dwnld">
+                <h3 style="margin-top: 10px;">download youTube videos</h3>
+            </div>
+            <div class="Client_Area">
+                <input type="text" id="URL_YT" placeholder="eg. https://youtube.com?watch=Xw5tgvFg"><button id="getRes" style="outline:none;overflow: hidden;">Upload</button>
+            </div>
+        </div>
+        <!-- END -->
+        <!-- PLAYLIST -->
+        <div id="lists" class="animation__animate animate__animated animate__fadeInUp">
+            <div class="titlePlay"> <span class="closeYT cleanllst"><i class="bi bi-chevron-double-down"></i></span></span><span> playlist </span><span style="float: right;" id="songsLength">0 song</span></div>
+            <div id="list">
+
+            <div id="playlist">
+                <ul id="playlist_list">
+
+                </ul>
+            </div>
+          </div>
+        </div>
+        <!-- ENDS -->
+        <div class="menuDown">
+            <div class="icR">
+                <button class="previous1"><i class="bi bi-skip-backward-fill"></i></button>
+                <button style="display: block;" class="play" onclick="Play();"><i class="bi bi-play-fill"></i></button>
+                <button class="next1"><i class="bi bi-skip-forward-fill"></i></button>
+                <button class="full"><i class="bi bi-capslock-fill"></i></button>
+
+            </div>
+            <ul>
+                <li class="Home"><span><i class="bi bi-house-fill"></i></span><span>Home</span></li>
+                <li class="playlist"><span><i class="bi bi-music-note-list"></i></span><span>playlist</span></li>
+                <li class="T-Speech"><span><i class="bi bi-megaphone-fill"></i></span><span>TSpeech</span></li>
+                <li class="youtube"><span><i class="bi bi-laptop"></i></span><span>Download</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- <script src="sha512-YsR46MmyChktsyMMou+Bs74oCa/CDdwft7rJ5wlnmDzMj1mzqncsfJamEEf99Nk7IB0JpTMo5hS8rxB49FUktQ=="></script> -->
+    <script src="js/jsmediatags.min.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+    <script src="js/voice.js"></script>
+    <script src="js/DownloaderEng.js"></script>
+    <script>
+        jQuery.noConflict;
+        jQuery(".cleanllst").on("click", function(){
+                jQuery("#lists").removeClass("animate__fadeInUp").addClass("animate__fadeOutDown");
+                    jQuery("#lists").fadeToggle({
+                        easing:'linear',
+                        duration:500
+                    });
+        });
+        jQuery(document).ready(function(){
+            jQuery(".bi.bi-three-dots-vertical.option").hover(
+                function(){
+                    jQuery(".more_list").fadeToggle({
+                        easing:'linear',
+                        duration:100
+                    });
+                }
+            );
+            jQuery(".bi.bi-gear.setting").hover(
+                function(){
+                    jQuery(".settings").fadeToggle({
+                        easing:'linear',
+                        duration:100
+                    });
+                }
+            );
+        jQuery(".full").on("click", function(){
+            jQuery(".mediaPoint").removeClass("animation__animate animate__animated animate__fadeOutDown").addClass("animation__animate animate__animated animate__fadeInUp");
+            jQuery(".mediaPoint").fadeIn({duration:100});
+            jQuery(".YDownloader").fadeOut({duration:100});
+            jQuery(".TextSpeech").fadeOut({duration:100});
+            jQuery("#lists").fadeOut({duration:100});
+            jQuery(".HomePage").fadeOut({duration:100});
+            jQuery(".icR").fadeOut({duration:1000});
+        });
+        jQuery(".playlist").on("click", function(){
+                jQuery("#lists").removeClass("animate__fadeOutDown").addClass("animate__fadeInUp");
+                    jQuery("#lists").fadeIn({
+                        easing:'linear',
+                        duration:500
+                   });
+                jQuery(".icR").fadeIn({duration:100});
+                jQuery(".TextSpeech").fadeOut({duration:100});
+                jQuery(".YDownloader").fadeOut({duration:100});
+                jQuery(".HomePage").fadeOut({duration:100});
+                jQuery(".mediaPoint").fadeOut({duration:100});
+        });
+        jQuery(".Home").on("click", function(){
+            jQuery(".HomePage").removeClass("animation__animate animate__animated animate__fadeOutDown").addClass("animation__animate animate__animated animate__fadeInUp").fadeIn({duration:100});
+                jQuery(".icR").fadeIn({duration:100});
+                jQuery(".mediaPoint").fadeOut({duration:100});
+                jQuery(".TextSpeech").fadeOut({duration:100});
+                jQuery("#lists").fadeOut({duration:100});
+                jQuery(".YDownloader").fadeOut({duration:100});
+        });
+        jQuery(".T-Speech").click(function(){
+                jQuery(".TextSpeech").removeClass("animation__animate animate__animated animate__fadeOutDown").addClass("animation__animate animate__animated animate__fadeInUp");
+                jQuery(".TextSpeech").fadeIn({duration:100});
+                jQuery(".YDownloader").fadeOut({duration:100});
+                jQuery("#lists").fadeOut({duration:100});
+                jQuery(".icR").fadeIn({duration:100});
+                jQuery(".mediaPoint").fadeOut({duration:100});
+                jQuery(".HomePage").fadeOut({duration:100});
+        });
+        jQuery(".speech").click(function(){
+                jQuery(".TextSpeech").removeClass("animation__animate animate__animated animate__fadeInUp").addClass("animation__animate animate__animated animate__fadeOutDown");
+                jQuery(".TextSpeech").fadeOut({duration:1000});
+        });
+        jQuery(".YT").click(function(){
+                jQuery(".YDownloader").removeClass("animation__animate animate__animated animate__fadeInUp").addClass("animation__animate animate__animated animate__fadeOutDown");
+                jQuery(".YDownloader").fadeOut({duration:1000});
+        });
+        jQuery(".youtube").on("click", function(){
+            jQuery(".YDownloader").removeClass("animation__animate animate__animated animate__fadeOutDown").addClass("animation__animate animate__animated animate__fadeInUp");
+            jQuery(".YDownloader").fadeIn({duration:100});
+            jQuery(".mediaPoint").fadeOut({duration:100});
+            jQuery(".TextSpeech").fadeOut({duration:100});
+            jQuery("#lists").fadeOut({duration:100});
+            jQuery(".HomePage").fadeOut({duration:100});
+            jQuery(".icR").fadeIn({duration:100});
+        });
+        jQuery(".closer").on("click", function(){
+            jQuery(".mediaPoint").removeClass("animation__animate animate__animated animate__fadeInUp").addClass("animation__animate animate__animated animate__fadeOutDown");
+            jQuery(".mediaPoint").fadeOut({duration:100});
+            jQuery(".icR").fadeIn({duration:1000});
+        });
+        });
+        jQuery(".plays").hover( function(){
+            jQuery(".sing").toggleClass("hover");
+        });
+        jQuery(".loadFLBTN").click(function(){
+            jQuery(".chooseFile").removeClass("animation__animate animate__animated animate__fadeOutUp").addClass("animation__animate animate__animated animate__fadeInDown");
+            jQuery(".chooseFile").fadeIn();
+        });
+        jQuery(".clos").click(function(){
+            jQuery(".chooseFile").removeClass("animation__animate animate__animated animate__fadeInDown").addClass("animation__animate animate__animated animate__fadeOutUp");
+
+            jQuery(".chooseFile").fadeOut();
+        });
+        setTimeout(() => {
+            jQuery("#WD").fadeOut({
+                done:
+                function(){
+                    jQuery("#WD").text("Speech Synthesis");
+                    jQuery("#WD").fadeIn({duration:500,
+                    done:function(){
+                        setTimeout(() => {
+                            jQuery("#WD").fadeOut({
+                                complete:function(){
+                                    jQuery("#WD").text("YouTube Downloader");
+                                    jQuery("#WD").fadeIn({
+                                        done:function(){
+                                            setTimeout(() => {
+                                                jQuery("#WD").fadeOut(
+                                                    {
+                                                        complete:function(){
+                                                            jQuery("#WD").text("Media Player");
+                                                            jQuery("#WD").fadeIn();
+                                                        }
+                                                    }
+                                                )
+                                            }, 3000);
+                                        }
+                                    });
+                                }
+                            });
+                        }, 3000);
+                    }});
+
+
+                }
+            });
+
+        }, 3000);
+        setTimeout(() => {
+            jQuery(".preLoader").fadeOut({duration:200});
+        }, 17000);
+        function hash(){
+            jQuery(".myRess").css({"animation": "fadeOutRight 2s"});
+            setTimeout(hash, 10000);
+        }
+        setTimeout(hash, 10000);
+        function please(){
+                jQuery(".myRess").css({"animation": "fadeInLeft 2s"});
+            setTimeout(please, 10100);
+        }
+        setTimeout(please, 10100);
+
+       function blockAgan(){
+        function mesg(){
+        jQuery(".myRess h1").text("Synthesis");
+        jQuery(".myRess h1").fadeOut({complete:function(){jQuery(this).fadeIn()}});
+        jQuery(".myRess p").fadeOut({complete:function(){jQuery(this).fadeIn({duration:2000})}});
+        jQuery(".myRess p").text("listen to your words on files, Enjoy Speeches and stories via Speech Synthesis world");
+       }
+       setTimeout(mesg, 10200);
+       function mesg1(){
+        jQuery(".myRess h1").fadeOut({complete:function(){jQuery(this).fadeIn()}});
+        jQuery(".myRess p").fadeOut({complete:function(){jQuery(this).fadeIn({duration:2000})}});
+        jQuery(".myRess p").text("download any youtube video you like to watch for Free. With High Quality");
+        jQuery(".myRess h1").text("Downloader");
+
+       }
+       setTimeout(mesg1, 20200);
+       function mesg2(){
+        jQuery(".myRess h1").fadeOut({complete:function(){jQuery(this).fadeIn()}});
+        jQuery(".myRess p").fadeOut({complete:function(){jQuery(this).fadeIn({duration:2000})}});
+        jQuery(".myRess p").text("See time spent and keep stop watch to limit yourself");
+        jQuery(".myRess h1").text("Spending Time");
+
+       }
+       setTimeout(mesg2, 30200);
+        jQuery(".myRess").css({"display": "none"});
+            setTimeout(() => {
+                jQuery(".myRess").css({"display": "block"});
+            }, 1000);
+            setTimeout(blockAgan,40000);
+       }
+       setTimeout(blockAgan,200);
+    </script>
+</body>
+</html>
