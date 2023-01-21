@@ -2,7 +2,6 @@ let inputBx, configBtn,concatURL;
 inputBx = document.querySelector("#URL_YT");
 configBtn = document.getElementById("getRes");
 configBtn.addEventListener("click", () => {
-    alert(inputBx.value);
     if(configBtn.includes("https://youtube.com/")){
         window.location = "https://ytmp3cut.com/"+inputBx.value;
     }else if(configBtn.includes("youtube.com/")){
